@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage ('Git clone') {
+            steps {
+                git branch: 'main', url: 'https://github.com/RJBComputerScientist/sampleDevOpsProject.git'
+            }
+        }
+        stage('Test'){
+            steps {
+                echo "Testing Completed"
+            }
+        }
+          stage('Build'){
+            steps {
+                echo "Build Completed"
+            }
+        }
+    }
+}
